@@ -1,6 +1,8 @@
 Servertime::Application.routes.draw do
-  get 'servertime' => 'server_time#index'
-  get 'servertime/update' => 'server_time#update'
+  match 'login' => 'login#login', :as => 'login'
+  get 'logout' => 'login#logout', :as => 'logout'
+  
+  get 'servertime' => 'server_time#update'
   
   root :to => 'server_time#index'
 end
