@@ -1,0 +1,1 @@
+page.replace_html :time, render(:text => Time.now.strftime('%H:%M:%S'))

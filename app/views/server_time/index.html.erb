@@ -1,0 +1,15 @@
+<script>
+  var updateTime = function() {
+    console.log(1);
+    new Ajax.Request('/servertime/update', {
+      method:'get',
+      onSuccess: function(transport){
+        var response = transport.responseText;
+        $('time').insert(response);
+      },
+      onFailure: function(){ alert('Something went wrong...') }
+    });
+  }
+  setInterval(updateTime, 5000);
+</script>
+<p id="time"><%= Time.now.strftime('%H:%M:%S') %></p>
