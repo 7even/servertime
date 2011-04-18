@@ -1,6 +1,5 @@
 <script>
   var updateTime = function() {
-    console.log(1);
     new Ajax.Request('/servertime', {
       method:'get',
       onSuccess: function(transport){
